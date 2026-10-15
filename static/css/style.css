@@ -30,7 +30,7 @@ hero { padding: 3.5rem 0 2.5rem; color: white; background: linear-gradient(135de
     border-radius: var(--radius);
     padding: 1.25rem;
     box-shadow: 0 12px 35px rgba(15, 42, 70, .10);
-    max-width: 1200px;
+    max-width: 1000px;
     width: 100%;
 }
 video { display: block; width: 100%; height: auto; border-radius: 12px; background: #000; }
