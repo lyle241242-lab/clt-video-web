@@ -21,10 +21,12 @@ hero {
     text-align: center; 
 }
 .hero-title { 
-    font-size: clamp(1.8rem, 4vw, 3rem); 
+    /* Giảm kích thước chữ để vừa vặn hơn */
+    font-size: clamp(1rem, 2.5vw, 2.2rem); 
     margin-bottom: 0.5rem; 
     margin-top: 0;
     text-transform: uppercase;
+    white-space: nowrap; /* Thuộc tính này bắt buộc chữ luôn nằm trên 1 dòng */
 }
 .hero-subtitle { 
     font-size: clamp(1.2rem, 2.5vw, 1.8rem); 
@@ -117,4 +119,8 @@ hr { border: 0; border-top: 1px solid #eee; margin: 1rem 0; }
 @media (max-width: 860px) {
     .grid { grid-template-columns: 1fr; }
     .hero { padding-top: 2.5rem; }
+    .hero-title { 
+        white-space: normal; /* Cho phép rớt dòng trên màn hình điện thoại nhỏ để dễ đọc */
+        font-size: 1.5rem; 
+    }
 }
