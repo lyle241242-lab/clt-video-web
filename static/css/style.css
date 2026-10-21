@@ -14,30 +14,76 @@ body {
     line-height: 1.6;
 }
 .container { width: min(1400px, 92%); margin-inline: auto; }
-hero { padding: 3.5rem 0 2.5rem; color: white; background: linear-gradient(135deg, #083b70, #0b79d0);text-align: center; }
-.hero h1 { margin: .25rem 0; font-size: clamp(2rem, 6vw, 4rem); }
-.hero p,
-.hero .eyebrow { font-weight: 800; letter-spacing: .12em; text-align: center; 
-    width: 100%;}
+hero { 
+    padding: 3.5rem 0 2.5rem; color: white; background: linear-gradient(135deg, #083b70, #0b79d0);text-align: center; 
+}
+.hero h1 { margin: .25rem 0; font-size: clamp(1.8rem, 5vw, 3.5rem); }
+.eyebrow { font-weight: 800; letter-spacing: .12em; ; text-transform: uppercase; }
 .grid {
     display: grid;
-    grid-template-columns: 1fr;
-    place-items: center;
-    gap: 1.25rem;
-    padding-block: 1.5rem 3rem;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    gap: 1.5rem;
+    padding-block: 2rem 1.5rem;
     align-items: start;
 }
 .card {
     background: var(--card);
     border-radius: var(--radius);
-    padding: 1.25rem;
+    padding: 1.5rem;
     box-shadow: 0 12px 35px rgba(15, 42, 70, .10);
-    max-width: 800px;
-    width: 100%;
+    margin-bottom: 2rem;
 }
-video { display: block; width: 100%; height: auto; border-radius: 12px; background: #000; }
+video { 
+    display: block; 
+    width: 100%; 
+    height: auto; 
+    border-radius: 12px; 
+    background: #000; 
+}
+.legend-list {
+    list-style: none;
+    padding-left: 0;
+}
+.legend-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+.color-box {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    flex-shrink: 0;
+}
+.mt-2 { margin-top: 1rem; }
+hr { border: 0; border-top: 1px solid #eee; margin: 1rem 0; }
 
-@media (max-width: 760px) {
+.markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+.markdown-content th, .markdown-content td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: center;
+}
+.markdown-content th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+.markdown-content h3 {
+    margin-top: 2rem;
+    color: var(--primary);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+@media (max-width: 860px) {
     .grid { grid-template-columns: 1fr; }
     .hero { padding-top: 2.5rem; }
 }

@@ -7,11 +7,15 @@
     <title>Mo phong CLT</title>
     <link rel="stylesheet"
         href="{{ url_for('static', path='/css/style.css') }}">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <header class="hero">
         <div class="container">
             <p class="eyebrow">MÔ PHỎNG BIẾN ĐỘNG GIÁ CỦA MỘT MÃ CHỨNG KHOÁN</p>
+            <h1>Biến Động Giá & Mô Phỏng CLT</h1>
+            <p>Quan sát diễn biến giá cổ phiếu qua các tháng, quý và các phiên giao dịch bất thường.</p>
         </div>
     </header>
     <main class="container grid">
@@ -23,4 +27,86 @@
 
             </video>
         </section>
+        <aside class="card">
+            <h2>Quy ước màu sắc giá cổ phiếu</h2>
+            <ul class="legend-list">
+                <li><span class="color-box" style="background-color: #FFD700;"></span> <strong>Giá tham chiếu:</strong> Là giá đóng cửa của ngày giao dịch liền trước.</li>
+                <li><span class="color-box" style="background-color: #00BFFF;"></span> <strong>Giá sàn:</strong> Mức giá bằng 90% giá tham chiếu (giới hạn dưới).</li>
+                <li><span class="color-box" style="background-color: #8A2BE2;"></span> <strong>Giá trần:</strong> Mức giá bằng 110% giá tham chiếu (giới hạn trên).</li>
+            </ul>
+            <p style="font-size: 0.9em; color: #555;"><em>*Trong một ngày, giá giao dịch chỉ được phép biến động trong khung giữa giá sàn và giá trần.</em></p>
+            <hr>
+            <ul class="legend-list mt-2">
+                <li><span class="color-box" style="background-color: #00FF00;"></span> <strong>Màu Xanh lá:</strong> Giá giao dịch lớn hơn giá tham chiếu (chưa chạm Trần).</li>
+                <li><span class="color-box" style="background-color: #FF0000;"></span> <strong>Màu Đỏ:</strong> Giá giao dịch nhỏ hơn giá tham chiếu (chưa chạm Sàn).</li>
+            </ul>
+        </aside>
+    </div>
+    <section class="card answers-card">
+        <h2>Kết quả phân tích dữ liệu giá cổ phiếu</h2>
+        <div class="markdown-content">
+            <h3>1. Bảng giá trung bình, độ biến động và phân tích theo tháng</h3>
+            <table>
+                <thead>
+                    <tr><th>Tháng</th><th>Giá trung bình (\(\mu\))</th><th>Độ lệch chuẩn (\(\sigma\))</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>6505.45</td><td>2038.72</td></tr>
+                    <tr><td>2</td><td>3708.10</td><td>695.98</td></tr>
+                    <tr><td>3</td><td>3811.03</td><td>484.89</td></tr>
+                    <tr><td>4</td><td>4431.04</td><td>784.64</td></tr>
+                    <tr><td>5</td><td>5609.42</td><td>1174.18</td></tr>
+                    <tr><td>6</td><td>7120.60</td><td>981.01</td></tr>
+                    <tr><td>7</td><td>5503.95</td><td>1024.29</td></tr>
+                    <tr><td>8</td><td>12703.73</td><td>3383.73</td></tr>
+                    <tr><td>9</td><td>15796.83</td><td>2442.93</td></tr>
+                    <tr><td>10</td><td>15316.21</td><td>1796.48</td></tr>
+                    <tr><td>11</td><td>15288.02</td><td>1894.65</td></tr>
+                    <tr><td>12</td><td>11492.67</td><td>2105.82</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li><strong>Nhận xét:</strong> Thị trường khởi đầu năm ở mức trung bình khá nhưng sau đó sụt giảm và đi nền tích lũy trong tháng 2 và tháng 3. Kể từ tháng 5, giá bắt đầu dốc lên và bùng nổ dữ dội vào giai đoạn tháng 8 và tháng 9.</li>
+                <li><strong>Tháng có biên độ dao động mạnh nhất:</strong> Dựa trên phương sai và độ lệch chuẩn cao nhất, <strong>Tháng 8</strong> là tháng có độ dao động mạnh nhất với \(\sigma_{max} = 3383.73\).</li>
+            </ul>
+
+            <h3>2. Đánh giá biến động giá trên từng quý</h3>
+            <table>
+                <thead>
+                    <tr><th>Quý</th><th>Giá trung bình (\(\mu_Q\))</th><th>Độ lệch chuẩn (\(\sigma_Q\))</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Q1</td><td>4683.89</td><td>1797.10</td></tr>
+                    <tr><td>Q2</td><td>5723.32</td><td>1480.95</td></tr>
+                    <tr><td>Q3</td><td>11379.88</td><td>5110.15</td></tr>
+                    <tr><td>Q4</td><td>14032.30</td><td>2588.66</td></tr>
+                </tbody>
+            </table>
+            <ul>
+                <li><strong>Đánh giá:</strong> Nửa đầu năm (Q1 & Q2), mức độ phân tán của giá khá thấp (\(\sigma < 2000\)), phản ánh một giai đoạn thị trường đang tích lũy. Bắt đầu từ Quý 3, thị trường bước vào pha thăng hoa. Sang Quý 4, mặt bằng giá được duy trì ở mức đỉnh, nhưng xung lực dao động đã hạ nhiệt.</li>
+            </ul>
+
+            <h3>3. Bảng ngày giao dịch có yếu tố bất thường (Mẫu)</h3>
+            <table>
+                <thead>
+                    <tr><th>Thời điểm (Mẫu)</th><th>Giá Tham Chiếu (\(P_{ref}\))</th><th>Giá Đóng Cửa (\(P_{close}\))</th><th>Trạng thái bất thường</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Ngày 1</td><td>10,000.0</td><td>9,000.0</td><td><strong>Giá Sàn</strong></td></tr>
+                    <tr><td>Ngày 2</td><td>9,000.0</td><td>9,900.0</td><td><strong>Giá Trần</strong></td></tr>
+                </tbody>
+            </table>
+
+            <h3>4. Xu hướng biến động cả năm & Biên độ dao động</h3>
+            <ul>
+                <li><strong>Xu hướng chính:</strong> Cấu trúc Uptrend (Đáy ở tháng 2-3, Tăng tốc ở tháng 7-8, Lập đỉnh ở tháng 9, và Suy thoái nhẹ ở tháng 11-12).</li>
+                <li><strong>Biên độ lớn nhất (Amplitude):</strong> Sự chênh lệch giữa mức đáy sâu nhất (2,289 VND) và mức đỉnh cao nhất (21,045 VND) tạo ra một biên độ khổng lồ lên tới gần <strong>18,756 VND</strong>. Cú nước rút kéo dãn biên độ mạnh nhất tập trung xảy ra vào chu kỳ <strong>giữa tháng 8 đến cuối tháng 9</strong>.</li>
+            </ul>
+
+            <h3>5. Vì sao đường biểu diễn đi xuống nhưng có màu xanh?</h3>
+            <p>Đường biểu diễn đi xuống nhưng nến có màu xanh xảy ra trong trường hợp <strong>tạo khoảng trống giá giảm (Gap down)</strong> đầu phiên. Đầu ngày thị trường bị bán tháo khiến giá mở cửa rớt xuống rất thấp. Tuy nhiên, trong phiên, phe Mua đã tham gia đẩy giá lên khiến giá đóng cửa cao hơn lúc mở cửa (tạo nến màu xanh). Mặc dù vậy, mức hồi phục này vẫn chưa đủ để vượt qua được giá đóng cửa của ngày hôm qua, dẫn đến việc nhìn tổng thể xu hướng (đường line) vẫn đang là đi xuống.</p>
+        </div>
+    </section>
     </main>
+</body>
+</html>
